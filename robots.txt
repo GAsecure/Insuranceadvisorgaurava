@@ -1,0 +1,14 @@
+# ==========================================
+# robots.txt
+# GA Secure Insurance Advisor
+# ==========================================
+
+User-agent: *
+Allow: /
+
+# Block unnecessary system folders
+Disallow: /.git/
+Disallow: /.github/
+
+# Sitemap
+Sitemap: https://gasecure.github.io/Insuranceadvisorgaurava/sitemap.xml
