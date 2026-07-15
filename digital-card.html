@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Digital Card | Gaurav Arora</title>
@@ -11,7 +12,11 @@
 <meta name="description"
 content="Official Digital Visiting Card of Gaurav Arora - Insurance Advisor">
 
+<meta name="theme-color" content="#0B4FA3">
+
 <link rel="icon" href="assets/icon-192.png">
+
+<link rel="apple-touch-icon" href="assets/icon-512.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -29,7 +34,7 @@ font-family:'Poppins',sans-serif;
 
 body{
 
-background:linear-gradient(135deg,#0B4FA3,#1B6ED6,#55B5FF);
+background:linear-gradient(135deg,#0b4fa3,#2d7de4,#56b5ff);
 
 padding:25px;
 
@@ -54,13 +59,13 @@ border-radius:28px;
 
 overflow:hidden;
 
-box-shadow:0 20px 45px rgba(0,0,0,.25);
+box-shadow:0 25px 50px rgba(0,0,0,.28);
 
 }
 
 .header{
 
-background:linear-gradient(135deg,#0B4FA3,#1B6ED6);
+background:linear-gradient(135deg,#0b4fa3,#1f74df);
 
 padding:35px 25px;
 
@@ -68,17 +73,19 @@ text-align:center;
 
 color:#fff;
 
+position:relative;
+
 }
 
 .profile{
 
-width:130px;
+width:140px;
 
-height:130px;
+height:140px;
 
 border-radius:50%;
 
-border:5px solid white;
+border:6px solid #fff;
 
 object-fit:cover;
 
@@ -96,9 +103,9 @@ font-weight:700;
 
 }
 
-.designation{
+.header p{
 
-margin-top:6px;
+margin-top:8px;
 
 font-size:17px;
 
@@ -106,71 +113,45 @@ opacity:.95;
 
 }
 
-.company{
+.tag{
 
-margin-top:8px;
+display:inline-block;
+
+margin-top:14px;
+
+background:rgba(255,255,255,.15);
+
+padding:8px 18px;
+
+border-radius:30px;
 
 font-size:14px;
 
-letter-spacing:1px;
-
-opacity:.8;
+backdrop-filter:blur(10px);
 
 }
 
-.services{
+.content{
 
-padding:22px;
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:12px;
-
-background:#f8fbff;
+padding:25px;
 
 }
 
-.service{
+.section-title{
 
-background:white;
+font-size:20px;
 
-border-radius:15px;
+font-weight:700;
 
-padding:15px;
+margin-bottom:18px;
+
+color:#0b4fa3;
 
 text-align:center;
 
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-
 }
 
-.service i{
-
-font-size:26px;
-
-color:#1556B8;
-
-margin-bottom:10px;
-
-}
-
-.service span{
-
-display:block;
-
-font-size:14px;
-
-font-weight:600;
-
-color:#333;
-
-}
-
-.actions{
-
-padding:22px;
+.buttons{
 
 display:grid;
 
@@ -178,27 +159,35 @@ grid-template-columns:repeat(2,1fr);
 
 gap:14px;
 
+margin-bottom:28px;
+
 }
 
-.action{
+.btn{
 
-text-decoration:none;
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:8px;
 
 padding:15px;
 
 border-radius:14px;
 
-font-weight:600;
-
-text-align:center;
+text-decoration:none;
 
 color:#fff;
 
-transition:.3s;
+font-weight:600;
+
+transition:.25s;
 
 }
 
-.action:hover{
+.btn:hover{
 
 transform:translateY(-3px);
 
@@ -206,7 +195,7 @@ transform:translateY(-3px);
 
 .call{
 
-background:#1556B8;
+background:#0b4fa3;
 
 }
 
@@ -218,49 +207,85 @@ background:#25D366;
 
 .email{
 
-background:#E53935;
-
-}
-
-.contact{
-
-background:#6A1B9A;
+background:#ff5c5c;
 
 }
 
 .download{
 
-background:#FB8C00;
-
-grid-column:1/3;
+background:#6a1b9a;
 
 }
 
-.qr{
+.save{
 
-padding:25px;
+background:#ff9800;
+
+}
+
+.home{
+
+background:#009688;
+
+}
+
+.qr-box{
 
 text-align:center;
 
+margin:25px 0;
+
 }
 
-.qr img{
+.qr-box img{
 
 width:180px;
 
 border-radius:18px;
 
-box-shadow:0 10px 25px rgba(0,0,0,.18);
+box-shadow:0 12px 30px rgba(0,0,0,.18);
 
 }
 
-.qr p{
+.qr-box p{
 
 margin-top:12px;
 
 font-size:14px;
 
-color:#666;
+color:#555;
+
+}
+
+.company-strip{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin-top:25px;
+
+}
+
+.company{
+
+background:#f4f8ff;
+
+padding:12px;
+
+border-radius:14px;
+
+text-align:center;
+
+font-weight:600;
+
+color:#0b4fa3;
+
+font-size:14px;
+
+border:1px solid #d8e6ff;
 
 }
 
@@ -268,13 +293,187 @@ color:#666;
 
 padding:20px;
 
-background:#f5f7fa;
-
 text-align:center;
+
+background:#f8f9fb;
 
 font-size:13px;
 
 color:#666;
+
+}
+
+@media(max-width:480px){
+
+.buttons{
+
+grid-template-columns:1fr;
+
+}
+  <div class="header">
+
+<img src="assets/gaurav.jpg"
+class="profile"
+alt="Gaurav Arora">
+
+<h1>
+
+Gaurav Arora
+
+</h1>
+
+<p>
+
+Insurance Advisor
+
+</p>
+
+<div class="tag">
+
+Serving Across India
+
+</div>
+
+</div>
+
+<div class="content">
+
+<h2 class="section-title">
+
+Connect With Me
+
+</h2>
+
+<div class="buttons">
+
+<a href="tel:+918595050607"
+class="btn call">
+
+<i class="fa-solid fa-phone"></i>
+
+Call
+
+</a>
+
+<a href="https://wa.me/918595050607?text=Hello%20Mr.%20Gaurav,%20I%20need%20insurance%20assistance."
+target="_blank"
+class="btn whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
+
+<a href="mailto:insuranceadvisorgaurava@gmail.com"
+class="btn email">
+
+<i class="fa-solid fa-envelope"></i>
+
+Email
+
+</a>
+
+<a href="download.html"
+class="btn download">
+
+<i class="fa-solid fa-download"></i>
+
+Downloads
+
+</a>
+
+<a href="contact.vcf"
+download
+class="btn save">
+
+<i class="fa-solid fa-address-card"></i>
+
+Save Contact
+
+</a>
+
+<a href="index.html"
+class="btn home">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+</div>
+        <div class="qr-box">
+
+<img src="assets/qr.png"
+alt="QR Code">
+
+<p>
+
+Scan QR Code To Open My Website
+
+</p>
+
+</div>
+
+<h2 class="section-title">
+
+Insurance Partners
+
+</h2>
+
+<div class="company-strip">
+
+<div class="company">
+
+Policybazaar
+
+</div>
+
+<div class="company">
+
+Star Health
+
+</div>
+
+<div class="company">
+
+Niva Bupa
+
+</div>
+
+<div class="company">
+
+HDFC ERGO
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<strong>GA Secure Insurance</strong>
+
+<br><br>
+
+Life Insurance • Health Insurance
+
+<br>
+
+Motor Insurance • Investment Planning
+
+<br><br>
+
+📞 +91 85950 50607
+
+</div>
+            </div>
+
+</div>
+
+</body>
+
+</html>
 
 }
 
@@ -285,174 +484,4 @@ color:#666;
 <body>
 
 <div class="card">
-
-<div class="header">
-
-<img src="assets/gaurav.jpg"
-class="profile"
-alt="Gaurav Arora">
-
-<h1>Gaurav Arora</h1>
-
-<p class="designation">
-
-Insurance Advisor
-
-</p>
-
-<p class="company">
-
-Health • Motor • Life • Home Insurance
-
-</p>
-
-</div>
-
-<div class="services">
-
-<div class="service">
-
-<i class="fa-solid fa-heart-pulse"></i>
-
-<span>Health</span>
-
-</div>
-
-<div class="service">
-
-<i class="fa-solid fa-car-side"></i>
-
-<span>Motor</span>
-
-</div>
-
-<div class="service">
-
-<i class="fa-solid fa-shield-heart"></i>
-
-<span>Life</span>
-
-</div>
-
-<div class="service">
-
-<i class="fa-solid fa-house"></i>
-
-<span>Home</span>
-
-</div>
-
-</div>
-
-<div class="actions">
-
-<a href="tel:+918595050607"
-class="action call">
-
-<i class="fa-solid fa-phone"></i>
-
-Call
-
-</a>
-
-<a href="https://wa.me/918595050607"
-class="action whatsapp">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-WhatsApp
-
-</a>
-
-<a href="mailto:insuranceadvisorgaurava@gmail.com"
-class="action email">
-
-<i class="fa-solid fa-envelope"></i>
-
-Email
-
-</a>
-
-<a href="contact.vcf"
-download
-class="action contact">
-
-<i class="fa-solid fa-address-card"></i>
-
-Save Contact
-
-</a>
-
-<a href="assets/card.jpg"
-download
-class="action download">
-
-<i class="fa-solid fa-download"></i>
-
-Download Digital Card
-
-</a>
-
-            </div>
-<div class="qr">
-
-<img src="assets/qr.png"
-alt="QR Code">
-
-<p>
-
-Scan QR Code To Open My Digital Insurance Card
-
-</p>
-
-</div>
-
-<div class="footer">
-
-<p>
-
-<strong>Gaurav Arora</strong>
-
-</p>
-
-<p>
-
-Professional Insurance Advisor
-
-</p>
-
-<p>
-
-Health • Motor • Life • Home Insurance
-
-</p>
-
-<p style="margin-top:10px;">
-
-<i class="fa-solid fa-phone"></i>
-
-+91 85950 50607
-
-</p>
-
-<p>
-
-<i class="fa-solid fa-envelope"></i>
-
-insuranceadvisorgaurava@gmail.com
-
-</p>
-
-<p style="margin-top:15px;color:#1556B8;font-weight:600;">
-
-Serving Across India
-
-</p>
-
-</div>
-
-</div>
-
-</body>
-
-</html>
+        
