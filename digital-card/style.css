@@ -1,19 +1,17 @@
-/* ===========================
-   RESET
-=========================== */
+/* =========================
+RESET
+========================= */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:"Poppins",sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
 
-background:#eaf2ff;
-
-padding:40px;
+background:#EAF2FF;
 
 display:flex;
 
@@ -21,21 +19,21 @@ justify-content:center;
 
 align-items:center;
 
+padding:30px;
+
 min-height:100vh;
 
 }
 
-/* ===========================
+/* =========================
 CARD
-=========================== */
+========================= */
 
 .card{
 
 width:1500px;
 
-max-width:100%;
-
-min-height:850px;
+height:900px;
 
 background:#fff;
 
@@ -47,21 +45,21 @@ display:grid;
 
 grid-template-columns:320px 1fr 260px;
 
-box-shadow:0 25px 60px rgba(0,0,0,.18);
+box-shadow:0 25px 70px rgba(0,0,0,.18);
 
 }
 
-/* ===========================
-LEFT PANEL
-=========================== */
+/* =========================
+LEFT
+========================= */
 
-.left-panel{
+.left{
 
-background:linear-gradient(180deg,#0B5ED7,#2F80ED);
+background:linear-gradient(180deg,#1565C0,#42A5F5);
 
 color:#fff;
 
-padding:45px 30px;
+padding:40px 25px;
 
 display:flex;
 
@@ -83,33 +81,35 @@ object-fit:cover;
 
 border:8px solid #fff;
 
-box-shadow:0 15px 35px rgba(0,0,0,.25);
+box-shadow:0 15px 30px rgba(0,0,0,.25);
 
 margin-bottom:25px;
 
 }
 
-.left-panel h2{
+.left h1{
 
-font-size:32px;
+font-size:38px;
 
 font-weight:800;
 
 text-align:center;
 
+line-height:1.1;
+
 }
 
-.designation{
+.advisor{
 
-margin-top:10px;
+margin-top:18px;
+
+background:#fff;
+
+color:#1565C0;
 
 padding:10px 22px;
 
 border-radius:40px;
-
-background:#fff;
-
-color:#0B5ED7;
 
 font-weight:700;
 
@@ -117,19 +117,19 @@ font-size:15px;
 
 }
 
-.quote{
+.tagline{
 
-margin:30px 0;
-
-text-align:center;
+margin:28px 0;
 
 font-size:18px;
+
+text-align:center;
 
 line-height:1.8;
 
 }
 
-.contact-list{
+.contact{
 
 width:100%;
 
@@ -137,11 +137,11 @@ display:flex;
 
 flex-direction:column;
 
-gap:16px;
+gap:15px;
 
 }
 
-.contact-list a{
+.contact a{
 
 background:rgba(255,255,255,.15);
 
@@ -149,67 +149,67 @@ padding:16px;
 
 border-radius:14px;
 
+text-decoration:none;
+
+color:#fff;
+
+font-weight:600;
+
 display:flex;
 
 align-items:center;
 
 gap:12px;
 
-font-size:16px;
-
-color:#fff;
-
-text-decoration:none;
-
 transition:.3s;
 
 }
 
-.contact-list a:hover{
+.contact a:hover{
 
 background:#fff;
 
-color:#0B5ED7;
+color:#1565C0;
 
 }
 
-/* ===========================
+/* =========================
 CENTER
-=========================== */
+========================= */
 
-.center-panel{
+.center{
 
 padding:45px;
 
 }
 
-.heading h1{
+.title h2{
 
 font-size:48px;
 
-color:#0B5ED7;
+color:#1565C0;
 
 font-weight:800;
 
 }
 
-.heading p{
+.title p{
 
-margin-top:12px;
+margin-top:10px;
 
-font-size:20px;
+font-size:22px;
 
-color:#666;
+color:#555;
 
 }
 
-/* ===========================
+/* =========================
 SERVICES
-=========================== */
+========================= */
 
 .services{
 
-margin-top:45px;
+margin-top:40px;
 
 display:grid;
 
@@ -223,9 +223,9 @@ gap:24px;
 
 background:#F7FAFF;
 
-padding:28px;
-
 border-radius:22px;
+
+padding:28px;
 
 transition:.3s;
 
@@ -235,7 +235,7 @@ transition:.3s;
 
 transform:translateY(-6px);
 
-box-shadow:0 12px 30px rgba(0,0,0,.12);
+box-shadow:0 15px 35px rgba(0,0,0,.12);
 
 }
 
@@ -243,23 +243,25 @@ box-shadow:0 12px 30px rgba(0,0,0,.12);
 
 font-size:42px;
 
-color:#0B5ED7;
+color:#1565C0;
 
-margin-bottom:18px;
+margin-bottom:15px;
 
 }
 
 .service h3{
 
-font-size:24px;
+font-size:26px;
+
+color:#1565C0;
 
 margin-bottom:12px;
-
-color:#0B5ED7;
 
 }
 
 .service p{
+
+font-size:16px;
 
 color:#666;
 
@@ -267,11 +269,11 @@ line-height:1.8;
 
 }
 
-/* ===========================
+/* =========================
 BUTTONS
-=========================== */
+========================= */
 
-.action-buttons{
+.buttons{
 
 margin-top:40px;
 
@@ -279,17 +281,15 @@ display:grid;
 
 grid-template-columns:repeat(2,1fr);
 
-gap:20px;
+gap:18px;
 
 }
 
-.action-buttons a{
+.buttons a{
 
 padding:18px;
 
-border-radius:18px;
-
-text-align:center;
+border-radius:16px;
 
 text-decoration:none;
 
@@ -297,63 +297,51 @@ font-size:18px;
 
 font-weight:700;
 
+text-align:center;
+
 color:#fff;
 
 transition:.3s;
 
 }
 
-.call-btn{
+.blue{
 
 background:#1565C0;
 
 }
 
-.wa-btn{
+.green{
 
 background:#25D366;
 
 }
 
-.quote-btn{
+.orange{
 
-background:#ff9800;
-
-}
-
-.claim-btn{
-
-background:#5c6bc0;
+background:#FB8C00;
 
 }
 
-.action-buttons a:hover{
+.purple{
+
+background:#5E35B1;
+
+}
+
+.buttons a:hover{
 
 transform:translateY(-4px);
 
 }
 
-/* ===========================
-COMPANIES
-=========================== */
+/* =========================
+COMPANY GRID
+========================= */
 
 .companies{
 
 margin-top:45px;
-
-}
-
-.companies h3{
-
-font-size:24px;
-
-color:#0B5ED7;
-
-margin-bottom:20px;
-
-}
-
-.company-grid{
 
 display:grid;
 
@@ -363,15 +351,15 @@ gap:18px;
 
 }
 
-/* ===========================
+/* =========================
 RIGHT
-=========================== */
+========================= */
 
-.right-panel{
+.right{
 
 background:#F8FBFF;
 
-padding:40px 25px;
+border-left:1px solid #e7eefc;
 
 display:flex;
 
@@ -379,7 +367,7 @@ flex-direction:column;
 
 align-items:center;
 
-border-left:1px solid #e8eefb;
+padding:40px 20px;
 
 }
 
@@ -387,96 +375,51 @@ border-left:1px solid #e8eefb;
 
 width:190px;
 
-padding:12px;
+padding:10px;
 
 background:#fff;
 
-border-radius:20px;
+border-radius:18px;
 
-box-shadow:0 12px 25px rgba(0,0,0,.12);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
 
 }
 
-.right-panel h3{
+.right h3{
 
-margin-top:22px;
+margin-top:20px;
 
 font-size:28px;
 
-color:#0B5ED7;
+color:#1565C0;
 
 }
 
-.right-panel p{
+.right p{
 
 margin-top:10px;
 
 text-align:center;
 
-color:#666;
-
 line-height:1.8;
 
-}
-
-.social{
-
-margin-top:35px;
-
-display:flex;
-
-gap:16px;
+color:#666;
 
 }
 
-.social a{
-
-width:52px;
-
-height:52px;
-
-border-radius:50%;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-background:#0B5ED7;
-
-color:#fff;
-
-font-size:22px;
-
-text-decoration:none;
-
-transition:.3s;
-
-}
-
-.social a:hover{
-
-transform:scale(1.08);
-
-}
-
-/* ===========================
+/* =========================
 RESPONSIVE
-=========================== */
+========================= */
 
-@media(max-width:1100px){
+@media(max-width:1200px){
 
 .card{
 
+width:100%;
+
+height:auto;
+
 grid-template-columns:1fr;
-
-}
-
-.left-panel,
-.right-panel{
-
-text-align:center;
 
 }
 
@@ -486,16 +429,23 @@ grid-template-columns:1fr;
 
 }
 
-.action-buttons{
+.buttons{
 
 grid-template-columns:1fr;
 
 }
 
-.company-grid{
+.companies{
 
 grid-template-columns:repeat(2,1fr);
 
 }
 
-  }
+.left,
+.right{
+
+text-align:center;
+
+}
+
+   }
