@@ -44,23 +44,14 @@ justify-content:center;
 }
 
 .card{
-
-width:1500px;
-
-height:900px;
-
-background:#fff;
-
-border-radius:30px;
-
-overflow:hidden;
-
-display:grid;
-
-grid-template-columns:320px 1fr 260px;
-
-box-shadow:0 25px 60px rgba(0,0,0,.18);
-
+    width:1500px;
+    height:900px;
+    background:#fff;
+    border-radius:30px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:320px 1fr 260px;
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
 }
 
 /* ======================================
