@@ -1,149 +1,257 @@
-/* ==========================================
-   DIGITAL CARD - SCRIPT.JS
-   Author: ChatGPT
-========================================== */
+/* =====================================================
+   GA SECURE DIGITAL CARD V5
+   SCRIPT
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("Digital Card Loaded Successfully");
+    if (typeof CONFIG === "undefined") {
+        console.error("Configuration.js not loaded");
+        return;
+    }
 
-    /* ===========================
-       Fade In Animation
-    =========================== */
+    /* ===============================
+       BASIC INFORMATION
+    =============================== */
 
-    const cards = document.querySelectorAll(
-        ".service-card,.partner,.quick-contact a,.action-buttons a,.qr-box"
-    );
+    document.title =
+        CONFIG.brand + " | " + CONFIG.owner;
 
-    cards.forEach((item, index) => {
+    document.getElementById("ownerName").textContent =
+        CONFIG.owner;
 
-        item.style.opacity = "0";
-        item.style.transform = "translateY(25px)";
+    document.getElementById("designation").textContent =
+        CONFIG.designation;
 
-        setTimeout(() => {
+    document.getElementById("tagline").textContent =
+        CONFIG.slogan;
 
-            item.style.transition = "all .6s ease";
+    document.getElementById("profileImage").src =
+        CONFIG.profileImage;
 
-            item.style.opacity = "1";
+    document.getElementById("qrImage").src =
+        CONFIG.qrImage;
 
-            item.style.transform = "translateY(0px)";
+    document.getElementById("address").textContent =
+        CONFIG.address;
 
-        }, index * 120);
+    /* ===============================
+       CONTACT BUTTONS
+    =============================== */
 
-    });
+    const phone = CONFIG.phone;
+    const whatsapp = CONFIG.whatsapp;
+    const email = CONFIG.email;
 
-    /* ===========================
-       Secure External Links
-    =========================== */
+    document.getElementById("callBtn").href =
+        "tel:" + phone;
 
-    document.querySelectorAll("a").forEach(link => {
+    document.getElementById("socialCall").href =
+        "tel:" + phone;
 
-        const href = link.getAttribute("href");
+    document.getElementById("floatingCall").href =
+        "tel:" + phone;
 
-        if (!href) return;
+    document.getElementById("mailBtn").href =
+        "mailto:" + email;
 
-        if (
-            href.startsWith("http") ||
-            href.startsWith("https")
-        ) {
+    document.getElementById("socialEmail").href =
+        "mailto:" + email;
 
-            link.target = "_blank";
-            link.rel = "noopener noreferrer";
+    document.getElementById("websiteLink").href =
+        CONFIG.website;
 
-        }
+    document.getElementById("socialWebsite").href =
+        CONFIG.website;
 
-    });
+    document.getElementById("saveBtn").href =
+        CONFIG.contactFile;
 
-    /* ===========================
-       Button Click Effect
-    =========================== */
+    /* ===============================
+       WHATSAPP LINKS
+    =============================== */
 
-    document.querySelectorAll(".action-buttons a,.quick-contact a").forEach(btn => {
+    function wa(message){
 
-        btn.addEventListener("click", () => {
+        return "https://wa.me/"
+        + whatsapp +
+        "?text=" +
+        encodeURIComponent(message);
 
-            btn.style.transform = "scale(.95)";
+    }
 
-            setTimeout(() => {
+    document.getElementById("waBtn").href =
+        wa(CONFIG.messages.consultation);
 
-                btn.style.transform = "";
+    document.getElementById("socialWhatsapp").href =
+        wa(CONFIG.messages.consultation);
 
-            }, 180);
+    document.getElementById("floatingWhatsapp").href =
+        wa(CONFIG.messages.consultation);
 
-        });
+    document.getElementById("quoteBtn").href =
+        wa(CONFIG.messages.quote);
 
-    });
+    document.getElementById("claimBtn").href =
+        wa(CONFIG.messages.claim);
 
-    /* ===========================
-       QR Hover Animation
-    =========================== */
+    document.getElementById("calculatorBtn").href =
+        wa(CONFIG.messages.calculator);
 
-    const qr = document.querySelector(".qr");
+    document.getElementById("renewBtn").href =
+        wa(CONFIG.messages.renewal);
+       /* ===============================
+       PARTNER LOGOS
+    =============================== */
 
-    if (qr) {
+    const partnerGrid = document.getElementById("partnerGrid");
 
-        qr.addEventListener("mouseenter", () => {
+    if (partnerGrid && CONFIG.companies) {
 
-            qr.style.transition = ".35s";
+        partnerGrid.innerHTML = "";
 
-            qr.style.transform = "scale(1.06)";
+        CONFIG.companies.forEach(company => {
 
-        });
+            const item = document.createElement("div");
+            item.className = "partner";
 
-        qr.addEventListener("mouseleave", () => {
+            item.innerHTML = `
+                <img
+                    src="${company.logo}"
+                    alt="${company.name}"
+                    title="${company.name}">
+            `;
 
-            qr.style.transform = "scale(1)";
+            partnerGrid.appendChild(item);
 
         });
 
     }
 
-    /* ===========================
-       Service Card Hover
-    =========================== */
+    /* ===============================
+       FADE IN ANIMATION
+    =============================== */
 
-    document.querySelectorAll(".service-card").forEach(card => {
+    const animatedItems = document.querySelectorAll(
+        ".service-card,.partner,.quick-actions a,.action-buttons a,.qr-card,.social-links a"
+    );
 
-        card.addEventListener("mouseenter", () => {
+    animatedItems.forEach((item,index)=>{
 
-            card.style.transition = ".3s";
+        item.style.opacity="0";
+        item.style.transform="translateY(20px)";
 
-            card.style.transform = "translateY(-8px)";
+        setTimeout(()=>{
 
-        });
+            item.style.transition=".5s ease";
 
-        card.addEventListener("mouseleave", () => {
+            item.style.opacity="1";
 
-            card.style.transform = "translateY(0px)";
+            item.style.transform="translateY(0)";
+
+        },80*index);
+
+    });
+
+    /* ===============================
+       RIPPLE CLICK EFFECT
+    =============================== */
+
+    document.querySelectorAll("a").forEach(link=>{
+
+        link.addEventListener("click",()=>{
+
+            link.style.transform="scale(.96)";
+
+            setTimeout(()=>{
+
+                link.style.transform="";
+
+            },180);
 
         });
 
     });
 
-    /* ===========================
-       Smooth Scroll (Future Use)
-    =========================== */
+    /* ===============================
+       QR ANIMATION
+    =============================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    const qr=document.querySelector(".qr-card");
 
-        anchor.addEventListener("click", function (e) {
+    if(qr){
 
-            e.preventDefault();
+        qr.addEventListener("mouseenter",()=>{
 
-            const target = document.querySelector(this.getAttribute("href"));
+            qr.style.transform="scale(1.04)";
 
-            if (target) {
+            qr.style.transition=".35s";
 
-                target.scrollIntoView({
+        });
 
-                    behavior: "smooth"
+        qr.addEventListener("mouseleave",()=>{
 
-                });
+            qr.style.transform="scale(1)";
 
-            }
+        });
+
+    }
+
+    /* ===============================
+       SERVICE CARD EFFECT
+    =============================== */
+
+    document.querySelectorAll(".service-card").forEach(card=>{
+
+        card.addEventListener("mouseenter",()=>{
+
+            card.style.transform="translateY(-8px)";
+
+        });
+
+        card.addEventListener("mouseleave",()=>{
+
+            card.style.transform="translateY(0px)";
 
         });
 
     });
+
+    /* ===============================
+       EXTERNAL LINKS
+    =============================== */
+
+    document.querySelectorAll("a").forEach(link=>{
+
+        const href=link.getAttribute("href");
+
+        if(!href) return;
+
+        if(href.startsWith("http")){
+
+            link.target="_blank";
+
+            link.rel="noopener noreferrer";
+
+        }
+
+    });
+
+    /* ===============================
+       CURRENT YEAR
+    =============================== */
+
+    const year=document.getElementById("year");
+
+    if(year){
+
+        year.textContent=new Date().getFullYear();
+
+    }
+
+    console.log(
+        CONFIG.brand +
+        " Digital Card Loaded Successfully"
+    );
 
 });
