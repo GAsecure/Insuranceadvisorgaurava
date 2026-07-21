@@ -255,3 +255,68 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+/* ==========================================
+   PREMIUM FEATURES
+========================================== */
+
+/* Loading Animation */
+
+window.addEventListener("load",()=>{
+
+    document.body.classList.add("loaded");
+
+});
+
+/* Floating Buttons Animation */
+
+document.querySelectorAll(".float").forEach(btn=>{
+
+    btn.addEventListener("mouseenter",()=>{
+
+        btn.style.transform="scale(1.12)";
+
+    });
+
+    btn.addEventListener("mouseleave",()=>{
+
+        btn.style.transform="scale(1)";
+
+    });
+
+});
+
+/* Service Card Click */
+
+document.querySelectorAll(".service-card").forEach(card=>{
+
+    card.addEventListener("click",()=>{
+
+        card.style.transition=".25s";
+
+        card.style.transform="scale(.97)";
+
+        setTimeout(()=>{
+
+            card.style.transform="";
+
+        },180);
+
+    });
+
+});
+
+/* Lazy Images */
+
+document.querySelectorAll("img").forEach(img=>{
+
+    img.loading="lazy";
+
+});
+
+/* Console */
+
+console.log("====================================");
+console.log("GA Secure Digital Card V5");
+console.log("Developer : ChatGPT");
+console.log("Status : Running");
+console.log("====================================");
